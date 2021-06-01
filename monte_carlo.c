@@ -38,20 +38,21 @@ int main(void) {
     }
   }
 }
-float mc_pi(int b){
+float mc_pi(int b)
+{
     float x,y,dist;
-    int circle=0;
-    for(int i=1;i<b;i++){
+    int points_in_circle=0;
+    for(int i=1;i<b;i++)
+       {
          x=frandom();
          y=frandom();
          dist=sqrt((float)((x*x)+(y*y)));
-         if(dist<=1){
-             circle=circle+1;
+         //if disance<=radius,the point lies within circle.radius=1 
+         if(dist<=1)
+         {
+             points_in_circle=points_in_circle+1;
          }
-    }
-    return 4*((float)circle/(float)b);
-    
-} 
-
-
-
+       }
+    //pi=4*(points in circle/total no. of points)
+    return 4*((float)points_in_circle/b);
+}
