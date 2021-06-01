@@ -27,7 +27,7 @@ float wallis_pi(int x)
 { int i;
   float ret=1.0;
   for(i=1;i<=x;i++)
-     { ret=ret*(float)(4*i*i)/((4*i*i)-1);
+     { ret=ret*(4*i*i)/((4*i*i)-1);
      }
   return 2*ret;
 }
